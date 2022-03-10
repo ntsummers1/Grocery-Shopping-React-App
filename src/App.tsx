@@ -5,7 +5,6 @@ import CartPage from "./pages/CartPage";
 import FourOhFour from "./pages/FourOhFour";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import ProductsPage from "./pages/ProductsPage";
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/products" element={<ProductsPage />} />
         <Route path="*" element={<FourOhFour />} />
       </Routes>
     </div>
