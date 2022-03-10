@@ -2,7 +2,7 @@
 
 <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a>
 
-I took inspiration in the design from [this grocery shoppping app.](https://www.behance.net/gallery/98460197/Grocery-Shopping-App?tracking_source=search_projects%7Cshopping%20cart%20website%20design) I thought this was so cool I wanted to see it live and try making it myself, so here it is!
+I took inspiration in the design from [this grocery shopping app.](https://www.behance.net/gallery/98460197/Grocery-Shopping-App?tracking_source=search_projects%7Cshopping%20cart%20website%20design) I thought this was so cool I wanted to see it live and try making it myself, so here it is!
 
 ## Project Information
 
