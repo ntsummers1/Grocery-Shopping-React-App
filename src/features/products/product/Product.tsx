@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Product = ({ product }: Props) => {
-  return <>{product.name}</>;
+  return <li>{product.name}</li>;
 };
 
 export default Product;
