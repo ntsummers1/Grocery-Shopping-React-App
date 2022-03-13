@@ -18,8 +18,26 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<IProduct>) => {
+      const product = action.payload
+      const found = state.items.find(item => item.id === product.id)
+      if (found) {
+        state.items = state.items.map(item => item.id === product.id ? {...found, qty: found.qty + 1}: item)
+      } else {
+        state.items.push({...product, qty: 1})
+      }
     },
     removeFromCart: (state, action: PayloadAction<IProduct>) => {
+      const product = action.payload
+      const found = state.items.find(item => item.id === product.id)
+      if (found) {
+        if (found.qty === 1) {
+          state.items = state.items.filter(item => item.id !== product.id)
+        } else {
+          state.items = state.items.map(item => item.id === product.id ? {...found, qty: found.qty - 1}: item)
+        }
+      } else {
+        console.error("Unable to find product in cart", product)
+      }
     }
   }
 });
