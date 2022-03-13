@@ -1,5 +1,6 @@
 import React from "react";
-import { useAppDispatch } from "../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { selectCartItems } from "../cartSlice";
 import ICartItem from "./cartItemInterface";
 
 type Props = {
@@ -8,8 +9,15 @@ type Props = {
 
 const Cart = ({ item }: Props) => {
   const dispatch = useAppDispatch();
+  const cartItems = useAppSelector(selectCartItems);
 
-  return <></>;
+  return (
+    <>
+      {cartItems.map((item) => (
+        <p> {item.name} </p>
+      ))}
+    </>
+  );
 };
 
 export default Cart;
