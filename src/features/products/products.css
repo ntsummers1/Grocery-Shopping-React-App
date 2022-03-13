@@ -1,0 +1,13 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  row-gap: 140px;
+  column-gap: 20px;
+}
+
+.products-title {
+  text-align: center;
+  margin-bottom: 150px;
+  color: #333;
+  font-size: 48px;
+}
