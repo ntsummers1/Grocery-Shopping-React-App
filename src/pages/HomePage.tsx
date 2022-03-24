@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+import Header from "../features/header/Header";
 import Products from "../features/products/Products";
 import {
   fetchProducts,
@@ -16,6 +17,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <Header />
       HomePage
       <Products products={selectProducts} />
     </div>

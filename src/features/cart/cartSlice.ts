@@ -25,6 +25,7 @@ const cartSlice = createSlice({
       } else {
         state.items.push({...product, qty: 1})
       }
+      console.log(state.items)
     },
     removeFromCart: (state, action: PayloadAction<IProduct>) => {
       const product = action.payload

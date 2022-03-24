@@ -20,9 +20,7 @@ const Product = ({ product }: Props) => {
         <button
           className="product-add"
           disabled={!product.instock}
-          onClick={() => {
-            dispatch(addToCart);
-          }}
+          onClick={() => dispatch(addToCart(product)) }
         >
           +
         </button>
