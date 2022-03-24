@@ -10,6 +10,7 @@ const Header = () => {
     return (
         <div>
             <Link to={'/cart'}>Cart {amountOfItems}</Link>
+            <Link to={'/'}>Products </Link>
         </div>
     )
 }

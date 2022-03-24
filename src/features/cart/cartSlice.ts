@@ -39,11 +39,21 @@ const cartSlice = createSlice({
       } else {
         console.error("Unable to find product in cart", product)
       }
+    },
+    removeCompletelyFromCart: (state, action: PayloadAction<IProduct>) => {
+        const product = action.payload
+        const found = state.items.find(item => item.id === product.id)
+        if (found) {
+          state.items = state.items.filter(item => item.id !== product.id)
+        } else {
+          console.error("Unable to find product in cart", product)
+        }
+
     }
   }
 });
 
-export const {addToCart, removeFromCart} = cartSlice.actions
+export const {addToCart, removeFromCart, removeCompletelyFromCart} = cartSlice.actions
 
 export const selectCartItems = (state : RootState) => state.cart.items
 export const selectCartTotalPrice = (state : RootState) => state.cart.items.map(item => item.price * item.qty).reduce((prev, curr) => prev + curr, 0)
