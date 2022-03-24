@@ -1,6 +1,5 @@
 import React from "react";
 import IProduct from "./productInterface";
-import "./product.css";
 import { useAppDispatch } from "../../../app/hooks";
 import { addToCart } from "../../cart/cartSlice";
 
@@ -12,13 +11,13 @@ const Product = ({ product }: Props) => {
   const dispatch = useAppDispatch();
 
   return (
-    <li className="product">
-      <img src={product.img} alt={product.name} className="product-img" />
-      <p className="product-name"> {product.name} </p>
-      <div className="product-info-row">
-        <p className="product-price">${product.price}</p>
+    <li className="">
+      <img src={product.img} alt={product.name} className="" />
+      <p className=""> {product.name} </p>
+      <div className="">
+        <p className="">${product.price}</p>
         <button
-          className="product-add"
+          className=""
           disabled={!product.instock}
           onClick={() => dispatch(addToCart(product)) }
         >

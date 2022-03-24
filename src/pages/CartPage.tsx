@@ -1,14 +1,15 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+import ICart from "../features/cart/cartInterface";
 import { addToCart, removeCompletelyFromCart, removeFromCart, selectCartItems, selectCartTotalPrice } from "../features/cart/cartSlice";
 import Header from "../features/header/Header";
 
 const CartPage = () => {
 
-  const cartItems = useAppSelector(selectCartItems)
-  const totalCost = useAppSelector(selectCartTotalPrice)
-  const shippingFee = 3.99
-  const deliveryTotal = totalCost > 0 ? (totalCost + shippingFee).toFixed(2) : 0
+  const cartItems: ICart = useAppSelector(selectCartItems)
+  const totalCost: number = useAppSelector(selectCartTotalPrice)
+  const shippingFee: number = 3.99
+  const deliveryTotal: number = totalCost > 0 ? parseFloat((totalCost + shippingFee).toFixed(2)) : 0
 
   const dispatch = useAppDispatch()
 
@@ -19,7 +20,7 @@ const CartPage = () => {
     <div> 
       <h2>Item(s)</h2>
       { cartItems.map(item => <div>
-          <img src={item.img}/>
+          <img src={item.img} alt={item.name}/>
           <p> {item.name} </p>
           <p> {item.price} </p>
           <p> {item.qty} </p>
