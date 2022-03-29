@@ -8,6 +8,7 @@ describe('Cart Reducer', () => {
     id: 0,
     name: "Generic Concrete Chicken",
     price: 173.0,
+    category: ['Meat'],
     img: "img1.jpg",
     instock: true
   }
@@ -16,9 +17,10 @@ describe('Cart Reducer', () => {
     id: 1,
     name: "Fantastic Plastic Chair",
     price: 320.0,
+    category: ['Furniture'],
     img: "../assets/imgs/1.jpeg",
     instock: true
-}
+  }
 
   const initialState : ICartState = {
     status: 'idle',

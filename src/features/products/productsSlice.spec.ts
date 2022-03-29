@@ -7,16 +7,18 @@ describe('Products Reducer', () => {
     id: 0,
     name: "Generic Concrete Chicken",
     price: 173.0,
+    category: ['Meat'],
     img: "img1.jpg",
     instock: true
   }
 
   const productTwo: IProduct = {
-    id: 0,
-    name: "Fabulous Wooden Cape",
-    price: 173.0,
-    img: "img1.jpg",
-    instock: false
+    id: 1,
+    name: "Fantastic Plastic Chair",
+    price: 320.0,
+    category: ['Furniture'],
+    img: "../assets/imgs/1.jpeg",
+    instock: true
   }
 
   const initialState: IProductsState = {
