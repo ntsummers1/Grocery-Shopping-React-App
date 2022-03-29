@@ -10,7 +10,7 @@ const Products = ({ products }: Props) => {
   return (
     <>
       <h1 className="text-4xl font-bold text-center">Products</h1>
-      <ul className="">
+      <ul className="flex flex-wrap mx-1 lg:mx-4">
         {products.map((product) => (
           <Product key={product.id} product={product} />
         ))}
