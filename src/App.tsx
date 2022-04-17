@@ -8,7 +8,7 @@ import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="bg-light-background min-h-full pt-4">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cart" element={<CartPage />} />

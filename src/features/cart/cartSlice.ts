@@ -61,9 +61,12 @@ export const { addToCart, removeFromCart, removeCompletelyFromCart } =
 
 export const selectCartItems = (state: RootState) => state.cart.items;
 export const selectCartTotalPrice = (state: RootState) =>
-  state.cart.items
-    .map((item) => item.price * item.qty)
-    .reduce((prev, curr) => prev + curr, 0);
+  parseFloat(
+    state.cart.items
+      .map((item) => item.price * item.qty)
+      .reduce((prev, curr) => prev + curr, 0)
+      .toFixed(2)
+  );
 export const selectCartItemsLength = (state: RootState) =>
   state.cart.items.length;
 
