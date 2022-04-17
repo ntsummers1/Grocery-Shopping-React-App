@@ -26,6 +26,7 @@ module.exports = {
         project: './tsconfig.json',
     },
     rules: {
+        'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
         'linebreak-style': 'off',
         'prettier/prettier': [
         'error',

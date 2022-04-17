@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import Header from "../features/header/Header";
 import Products from "../features/products/Products";
@@ -17,7 +17,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <Header />
+      <Header left={"categories"} middle={"search"} right={"basket/profile"} />
       HomePage
       <Products products={selectProducts} />
     </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import ICart from "../features/cart/cartInterface";
 import {
@@ -30,7 +29,7 @@ const CartPage = () => {
 
   return (
     <div>
-      <Header />
+      <Header left="basket" middle="My Cart" right="close" />
 
       <div className="flex flex-col lg:flex-row mx-4">
         <div className="flex-auto w-full lg:w-3/5 lg:border-r-2 border-gray-100 px-2 lg:pr-12 lg:pl-4">
