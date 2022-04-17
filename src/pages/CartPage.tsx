@@ -17,6 +17,7 @@ import {
   FaMinus,
   FaPlus,
 } from "react-icons/fa";
+import CartItem from "../features/cart/cartItem/CartItem";
 
 const CartPage = () => {
   const cartItems: ICart = useAppSelector(selectCartItems);
@@ -34,40 +35,16 @@ const CartPage = () => {
       <div className="flex flex-col lg:flex-row mx-4">
         <div className="flex-auto w-full lg:w-3/5 lg:border-r-2 border-gray-100 px-2 lg:pr-12 lg:pl-4">
           <h2 className="font-bold text-lg mb-4">Item(s)</h2>
-          {cartItems.map((item) => (
+          {cartItems.length > 0 ? (
+            cartItems.map((item) => <CartItem item={item} />)
+          ) : (
             <div className="flex bg-white py-4 px-4 flex-row rounded-md mt-4">
-              <img src={item.img} alt={item.name} className="w-20 h-20 mr-8" />
-              <div className="flex-auto w-full mt-4">
-                <p className="text-lg text-green-700"> {item.name} </p>
-                <p className="text-lg text-green-800 font-bold">
-                  ${item.price}
-                </p>
-              </div>
-              <div className="flex-auto flex-col w-40">
-                <p
-                  onClick={() => dispatch(removeCompletelyFromCart(item))}
-                  className="text-red-400 font-bold text-sm text-right cursor-pointer hover:text-red-500 hover:underline"
-                >
-                  Remove
-                </p>
-                <div className="flex-auto flex-row mt-6 text-right">
-                  <p
-                    onClick={() => dispatch(removeFromCart(item))}
-                    className="text-white bg-green-900 hover:bg-green-700 rounded-full text-sm p-1.5 text-center inline-flex items-center  cursor-pointer"
-                  >
-                    <FaMinus />
-                  </p>
-                  <p className="inline-flex mx-4"> {item.qty} </p>
-                  <p
-                    onClick={() => dispatch(addToCart(item))}
-                    className="text-white bg-green-900 hover:bg-green-700 rounded-full text-sm p-1.5 text-center inline-flex items-center cursor-pointer"
-                  >
-                    <FaPlus />
-                  </p>
-                </div>
-              </div>
+              <p>
+                No items have been added to the cart yet. We'll be ready once
+                you pick some out!
+              </p>
             </div>
-          ))}
+          )}
         </div>
 
         <div className="flex-auto w-full lg:w-2/5 px-2 ms:px-4 mt-2 lg:mt-0">
