@@ -18,7 +18,6 @@ const HomePage = () => {
   return (
     <div>
       <Header left={"categories"} middle={"search"} right={"basket/profile"} />
-      HomePage
       <Products products={selectProducts} />
     </div>
   );

@@ -1,9 +1,6 @@
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppSelector } from "../app/hooks";
 import ICart from "../features/cart/cartInterface";
 import {
-  addToCart,
-  removeCompletelyFromCart,
-  removeFromCart,
   selectCartItems,
   selectCartTotalPrice,
 } from "../features/cart/cartSlice";
@@ -14,8 +11,6 @@ import {
   FaCcMastercard,
   FaCcAmex,
   FaMoneyBill,
-  FaMinus,
-  FaPlus,
 } from "react-icons/fa";
 import CartItem from "../features/cart/cartItem/CartItem";
 
@@ -25,8 +20,6 @@ const CartPage = () => {
   const shippingFee = 3.99;
   const deliveryTotal: number =
     totalCost > 0 ? parseFloat((totalCost + shippingFee).toFixed(2)) : 0;
-
-  const dispatch = useAppDispatch();
 
   return (
     <div>

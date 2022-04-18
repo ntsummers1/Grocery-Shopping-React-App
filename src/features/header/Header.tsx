@@ -3,6 +3,7 @@ import { selectCartItemsLength } from "../cart/cartSlice";
 import Basket from "./Basket";
 import Close from "./Close";
 import HeaderTitle from "./HeaderTitle";
+import Search from "./Search";
 
 type Props = {
   left: "basket" | "categories";
@@ -18,11 +19,7 @@ const Header = ({ left, middle, right }: Props) => {
       <nav className="mb-4 mx-4 bg-gradient-to-r from-dark-green to-light-green px-2 sm:px-4 py-2.5 rounded-full">
         <div className="py-4 flex flex-wrap justify-between items-center mx-auto">
           {left == "basket" ? <Basket amountOfItems={amountOfItems} /> : <></>}
-          {middle == "search" ? (
-            <Basket amountOfItems={amountOfItems} />
-          ) : (
-            <HeaderTitle title={middle} />
-          )}
+          {middle == "search" ? <Search /> : <HeaderTitle title={middle} />}
           {right == "basket/profile" ? (
             <Basket amountOfItems={amountOfItems} />
           ) : (
