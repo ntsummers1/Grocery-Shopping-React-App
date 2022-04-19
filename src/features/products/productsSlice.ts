@@ -19,7 +19,7 @@ const initialState: IProductsState = {
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
-    const endpoint = "../../endpointResponses/products.json";
+    const endpoint = "http://localhost:8080/api/products";
     console.log(endpoint);
     if (endpoint) {
       const res = await axios.get(endpoint);
