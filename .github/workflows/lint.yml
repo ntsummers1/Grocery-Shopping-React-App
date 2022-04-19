@@ -29,8 +29,8 @@ jobs:
       - name: Install Node.js dependencies
         run: yarn install
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v1
-        with:
-          eslint: true
-          prettier: true
+      - name: Run Formater
+        run: yarn format
+        
+      - name: Run Linter
+        run: yarn lint
