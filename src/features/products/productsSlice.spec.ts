@@ -1,6 +1,10 @@
 /* eslint-disable jest/no-commented-out-tests */
 import IProduct from "./product/productInterface";
-import productReducer, { fetchProducts, IProductsState } from "./productsSlice";
+import productReducer, {
+  fetchProducts,
+  getProductsByCategory,
+  IProductsState,
+} from "./productsSlice";
 
 describe("Products Reducer", () => {
   const productOne: IProduct = {
@@ -39,7 +43,7 @@ describe("Products Reducer", () => {
 
   const fetchedProductsState: IProductsState = {
     status: "idle",
-    products: [productOne, productTwo],
+    products: [productOne, productTwo, productThree],
     filteredProducts: [productOne, productTwo, productThree],
     categories: ["All", "Snacks", "Fruits"],
   };
@@ -85,7 +89,7 @@ describe("Products Reducer", () => {
     );
 
     expect(state).toEqual({
-      fetchedProductsState,
+      ...fetchedProductsState,
     });
   });
 
@@ -97,7 +101,7 @@ describe("Products Reducer", () => {
 
     expect(state).toEqual({
       ...fetchedProductsState,
-      products: [productOne, productTwo],
+      filteredProducts: [productOne, productTwo],
     });
   });
 
@@ -109,7 +113,7 @@ describe("Products Reducer", () => {
 
     expect(state).toEqual({
       ...fetchedProductsState,
-      products: [],
+      filteredProducts: [],
     });
   });
 

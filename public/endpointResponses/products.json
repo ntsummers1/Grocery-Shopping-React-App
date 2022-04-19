@@ -1,5 +1,5 @@
 {
- "categories": ["Snacks", "Fruits"],  
+ "categories": ["All", "Snacks", "Fruits"],  
  "products" : [
     {
       "id": 1,

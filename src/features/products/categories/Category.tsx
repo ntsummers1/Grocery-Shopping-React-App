@@ -2,6 +2,7 @@ import React from "react";
 import { useAppDispatch } from "../../../app/hooks";
 import { BiCategory, BiFoodMenu } from "react-icons/bi";
 import { GiKiwiFruit, GiChipsBag } from "react-icons/gi";
+import { getProductsByCategory } from "../productsSlice";
 
 type Props = {
   category: string;
@@ -28,7 +29,7 @@ const Category = ({ category }: Props) => {
 
   return (
     <li className="w-full cursor-pointer hover:font-bold py-2">
-      <button onClick={dispatch(getProductsByCategory(category))}>
+      <button onClick={() => dispatch(getProductsByCategory(category))}>
         <span className="text-white bg-white hover:bg-white/20 rounded-full text-2xl         p-1.5 text-center inline-flex items-center mr-4 shadow-xl">
           {categoryIconHelper(category)}
         </span>{" "}
