@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-groceryshoppingreact-dev-115023-authRole",
+      "UnauthRoleArn": "arn:aws:iam::760007697967:role/amplify-groceryshoppingreact-dev-115023-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::760007697967:role/amplify-groceryshoppingreact-dev-115023-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-groceryshoppingreact-dev-115023-deployment",
+      "UnauthRoleName": "amplify-groceryshoppingreact-dev-115023-unauthRole",
+      "StackName": "amplify-groceryshoppingreact-dev-115023",
+      "StackId": "arn:aws:cloudformation:us-east-1:760007697967:stack/amplify-groceryshoppingreact-dev-115023/6e7e2c40-bff8-11ec-a8ae-0e713b696ee9",
+      "AmplifyAppId": "d1bz7eeg6y7cld"
+    },
+    "categories": {
+      "auth": {
+        "groceryshoppingreacta3fa8198": {}
+      }
+    }
+  }
+}
