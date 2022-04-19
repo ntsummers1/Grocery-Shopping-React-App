@@ -117,37 +117,36 @@ describe("Products Reducer", () => {
     });
   });
 
-  // it("should handle default filter", () => {
-  //   const state = productReducer(
-  //     fetchedProductsState,
-  //     filterProducts({ instock: null, name: null })
-  //   );
-  //   expect(state).toEqual({
-  //     ...fetchedProductsState,
-  //     filteredProducts: [productOne, productTwo, productThree],
-  //   });
-  // });
+  it("should handle searching for products by name", () => {
+    const state = productReducer(
+      fetchedProductsState,
+      getProductsByName("Plastic")
+    );
 
-  // it("should handle filtering by inStock", () => {
-  //   const state = productReducer(
-  //     fetchedProductsState,
-  //     filterProducts({ instock: true, name: null })
-  //   );
+    expect(state).toEqual({
+      ...fetchedProductsState,
+      filteredProducts: [productTwo, productThree],
+    });
+  });
 
-  //   expect(state).toEqual({
-  //     ...fetchedProductsState,
-  //     filteredProducts: [productOne, productThree],
-  //   });
-  // });
+  it("should return no products searching for products by unfound name", () => {
+    const state = productReducer(
+      fetchedProductsState,
+      getProductsByName("test")
+    );
 
-  // it("should handle filtering by name", () => {
-  //   const state = productReducer(
-  //     fetchedProductsState,
-  //     filterProducts({ instock: true, name: "Hair" })
-  //   );
-  //   expect(state).toEqual({
-  //     ...fetchedProductsState,
-  //     filteredProducts: [productThree],
-  //   });
-  // });
+    expect(state).toEqual({
+      ...fetchedProductsState,
+      filteredProducts: [],
+    });
+  });
+
+  it("should return all products searching for products by empty string", () => {
+    const state = productReducer(fetchedProductsState, getProductsByName(""));
+
+    expect(state).toEqual({
+      ...fetchedProductsState,
+      filteredProducts: [productOne, productTwo, productThree],
+    });
+  });
 });
