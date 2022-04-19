@@ -3,6 +3,7 @@ import IProduct from "./product/productInterface";
 import productReducer, {
   fetchProducts,
   getProductsByCategory,
+  getProductsByName,
   IProductsState,
 } from "./productsSlice";
 
