@@ -1,3 +1,5 @@
+import { FaSearch } from "react-icons/fa";
+
 const Search = () => {
   return (
     <form className="justify-between items-center flex flex-1 w-100 max-w-lg px-2.5 mx-auto">
@@ -9,9 +11,10 @@ const Search = () => {
       />
       <button
         type="submit"
-        className="bg-gray-50 hover:bg-gray-200 text-gray-900 text-sm rounded-full p-2.5 px-5 mx-1 font-bold"
+        className="bg-gray-50 hover:bg-gray-200 text-green-800 text-sm rounded-full p-2.5 mx-1 font-bold w-10 lg:w-28"
       >
-        Search
+        <p className="hidden lg:inline-flex">Search </p>
+        <FaSearch className="inline-flex lg:ml-4 tx-lg -mt-1" />
       </button>
     </form>
   );
