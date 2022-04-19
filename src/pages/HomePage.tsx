@@ -7,7 +7,12 @@ import {
   selectFilteredProducts,
 } from "../features/products/productsSlice";
 
-const HomePage = () => {
+type Props = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  signOut: any;
+};
+
+const HomePage = ({ signOut }: Props) => {
   const dispatch = useAppDispatch();
   const selectProducts = useAppSelector(selectFilteredProducts);
 
@@ -17,7 +22,12 @@ const HomePage = () => {
 
   return (
     <div>
-      <Header left={"categories"} middle={"search"} right={"basket/profile"} />
+      <Header
+        left={"categories"}
+        middle={"search"}
+        right={"basket/profile"}
+        signOut={signOut}
+      />
       <Products products={selectProducts} />
     </div>
   );
