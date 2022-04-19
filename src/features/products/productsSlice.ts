@@ -1,7 +1,7 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../../app/store";
-import IProductsFilter from "./productsFilterInterface";
+// import IProductsFilter from "./productsFilterInterface";
 import IProducts from "./productsInterface";
 
 export interface IProductsState {
@@ -34,20 +34,20 @@ const productsSlice = createSlice({
   name: "Products Reducer",
   initialState,
   reducers: {
-    filterProducts: (state, action: PayloadAction<IProductsFilter>) => {
-      const filters = action.payload;
-      state.filteredProducts = state.products;
-      if (filters.instock) {
-        state.filteredProducts = state.filteredProducts.filter(
-          (item) => item.instock === filters.instock
-        );
-      }
-      if (filters.name) {
-        state.filteredProducts = state.filteredProducts.filter((item) =>
-          item.name.includes(filters.name)
-        );
-      }
-    },
+    // filterProducts: (state, action: PayloadAction<IProductsFilter>) => {
+    //   const filters = action.payload;
+    //   state.filteredProducts = state.products;
+    //   if (filters.instock != null) {
+    //     state.filteredProducts = state.filteredProducts.filter(
+    //       (item) => item.instock === filters.instock
+    //     );
+    //   }
+    //   if (filters.name != null) {
+    //     state.filteredProducts = state.filteredProducts.filter((item) =>
+    //       item.name.includes(filters.name!)
+    //     );
+    //   }
+    // },
   },
   extraReducers: (builder) => {
     builder
@@ -65,7 +65,7 @@ const productsSlice = createSlice({
   },
 });
 
-export const { filterProducts } = productsSlice.actions;
+// export const { filterProducts } = productsSlice.actions;
 
 export const selectFilteredProducts = (state: RootState) =>
   state.products.filteredProducts;

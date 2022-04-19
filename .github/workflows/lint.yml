@@ -12,8 +12,8 @@ on:
       - main
 
 jobs:
-  run-linters:
-    name: Run linters
+  run-linter-and-jest:
+    name: Run ESLint/Prettier & Jest
     runs-on: ubuntu-latest
 
     steps:
@@ -29,8 +29,11 @@ jobs:
       - name: Install Node.js dependencies
         run: yarn install
 
-      - name: Run Formater
+      - name: Run Prettier
         run: yarn format
         
-      - name: Run Linter
+      - name: Run ESLint
         run: yarn lint
+
+      - name: Run Jest
+        run: yarn test
