@@ -32,11 +32,11 @@ const HomePage = ({ signOut }: Props) => {
         signOut={signOut}
       />
       <div className="flex flex-col md:flex-row mx-4">
-        <div className="flex-auto w-full md:w-2/5 lg:w-1/5 px-2 lg:pr-12 lg:pl-4">
+        <div className="flex-auto w-full md:w-3/12 lg:w-2/12 px-2 lg:pl-4">
           <Categories categories={selectCategoryList} />
         </div>
 
-        <div className="flex-auto w-full md:w-3/5 lg:w-4/5 px-2 ms:px-4 mt-2 lg:mt-0">
+        <div className="flex-auto w-full md:w-9/12 lg:w-10/12 px-2 ms:px-4 mt-2 lg:mt-0">
           <Products products={selectProducts} />
         </div>
       </div>

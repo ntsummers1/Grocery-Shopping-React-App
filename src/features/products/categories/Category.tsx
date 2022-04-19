@@ -14,10 +14,10 @@ const categoryIconHelper = (category: string): JSX.Element => {
       return <BiCategory className="text-blue-500" />;
 
     case "Snacks":
-      return <GiChipsBag className="text-blue-500" />;
+      return <GiChipsBag className="text-red-500" />;
 
     case "Fruits":
-      return <GiKiwiFruit className="text-orange-600" />;
+      return <GiKiwiFruit className="text-green-600" />;
 
     default:
       return <BiFoodMenu />;
@@ -28,12 +28,15 @@ const Category = ({ category }: Props) => {
   const dispatch = useAppDispatch();
 
   return (
-    <li className="w-full cursor-pointer hover:font-bold py-2">
-      <button onClick={() => dispatch(getProductsByCategory(category))}>
-        <span className="text-white bg-white hover:bg-white/20 rounded-full text-2xl         p-1.5 text-center inline-flex items-center mr-4 shadow-xl">
+    <li className="w-36 h-10 md:w-full mb-4">
+      <button
+        className="flex w-full cursor-pointer hover:font-bold h-10"
+        onClick={() => dispatch(getProductsByCategory(category))}
+      >
+        <span className="text-white bg-white hover:bg-white/20 rounded-full text-2xl p-1.5 text-center inline-flex items-center mr-4 shadow-xl">
           {categoryIconHelper(category)}
-        </span>{" "}
-        {category}
+        </span>
+        <span className="inline-flex leading-10">{category}</span>
       </button>
     </li>
   );
