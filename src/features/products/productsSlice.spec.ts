@@ -7,28 +7,28 @@ describe("Products Reducer", () => {
     id: 0,
     name: "Generic Concrete Chicken",
     price: 173.0,
-    category: ["Meat"],
+    category: ["Snacks"],
     img: "img1.jpg",
     instock: true,
   };
 
-  // const productTwo: IProduct = {
-  //   id: 1,
-  //   name: "Fantastic Plastic Chair",
-  //   price: 320.0,
-  //   category: ["Furniture"],
-  //   img: "../assets/imgs/1.jpeg",
-  //   instock: false,
-  // };
+  const productTwo: IProduct = {
+    id: 1,
+    name: "Fantastic Plastic Chair",
+    price: 320.0,
+    category: ["Snacks", "Fruit"],
+    img: "../assets/imgs/1.jpeg",
+    instock: false,
+  };
 
-  // const productThree: IProduct = {
-  //   id: 1,
-  //   name: "Fantastic Plastic Hair",
-  //   price: 120.0,
-  //   category: ["Hair"],
-  //   img: "../assets/imgs/1.jpeg",
-  //   instock: true,
-  // };
+  const productThree: IProduct = {
+    id: 1,
+    name: "Fantastic Plastic Hair",
+    price: 120.0,
+    category: ["Fruit"],
+    img: "../assets/imgs/1.jpeg",
+    instock: true,
+  };
 
   const initialState: IProductsState = {
     status: "idle",
@@ -37,11 +37,12 @@ describe("Products Reducer", () => {
     categories: [],
   };
 
-  // const fetchedProductsState: IProductsState = {
-  //   status: "idle",
-  //   products: [productOne, productTwo],
-  //   filteredProducts: [productOne, productTwo, productThree],
-  // };
+  const fetchedProductsState: IProductsState = {
+    status: "idle",
+    products: [productOne, productTwo],
+    filteredProducts: [productOne, productTwo, productThree],
+    categories: ["All", "Snacks", "Fruits"],
+  };
 
   it("should handle initial state", () => {
     expect(productReducer(undefined, { type: undefined })).toEqual(
@@ -75,6 +76,41 @@ describe("Products Reducer", () => {
       payload: { error: "Some Error" },
     });
     expect(state).toEqual({ ...initialState, status: "error" });
+  });
+
+  it("should handle all categories of products", () => {
+    const state = productReducer(
+      fetchedProductsState,
+      getProductsByCategory("All")
+    );
+
+    expect(state).toEqual({
+      fetchedProductsState,
+    });
+  });
+
+  it("should handle a particular category of products", () => {
+    const state = productReducer(
+      fetchedProductsState,
+      getProductsByCategory("Snacks")
+    );
+
+    expect(state).toEqual({
+      ...fetchedProductsState,
+      products: [productOne, productTwo],
+    });
+  });
+
+  it("should handle an non-exsitant category of products", () => {
+    const state = productReducer(
+      fetchedProductsState,
+      getProductsByCategory("John")
+    );
+
+    expect(state).toEqual({
+      ...fetchedProductsState,
+      products: [],
+    });
   });
 
   // it("should handle default filter", () => {
