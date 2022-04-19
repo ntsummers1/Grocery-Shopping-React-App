@@ -1,6 +1,6 @@
 const Search = () => {
   return (
-    <form className="justify-between items-center flex flex-1 w-100 max-w-lg p-2.5 mx-auto">
+    <form className="justify-between items-center flex flex-1 w-100 max-w-lg px-2.5 mx-auto">
       <input
         type="text"
         id="product-search"

@@ -34,6 +34,7 @@ describe("Products Reducer", () => {
     status: "idle",
     products: [],
     filteredProducts: [],
+    categories: [],
   };
 
   // const fetchedProductsState: IProductsState = {
@@ -58,12 +59,13 @@ describe("Products Reducer", () => {
   it("should handle fetchProducts fulfilled status", () => {
     const state = productReducer(initialState, {
       type: fetchProducts.fulfilled.type,
-      payload: [productOne],
+      payload: { categories: ["Snacks", "Fruits"], products: [productOne] },
     });
     expect(state).toEqual({
-      ...initialState,
+      status: "idle",
       products: [productOne],
       filteredProducts: [productOne],
+      categories: ["Snacks", "Fruits"],
     });
   });
 

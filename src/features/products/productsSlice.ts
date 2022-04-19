@@ -8,12 +8,14 @@ export interface IProductsState {
   status: "idle" | "loading" | "error";
   products: IProducts;
   filteredProducts: IProducts;
+  categories: string[];
 }
 
 const initialState: IProductsState = {
   status: "idle",
   products: [],
   filteredProducts: [],
+  categories: [],
 };
 
 export const fetchProducts = createAsyncThunk(
@@ -56,8 +58,13 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.status = "idle";
-        state.products = action.payload;
-        state.filteredProducts = action.payload;
+        const products: IProducts = action.payload.products;
+
+        console.log(action.payload);
+
+        state.products = products;
+        state.filteredProducts = products;
+        state.categories = action.payload.categories;
       })
       .addCase(fetchProducts.rejected, (state) => {
         state.status = "error";
@@ -67,6 +74,7 @@ const productsSlice = createSlice({
 
 // export const { filterProducts } = productsSlice.actions;
 
+export const selectCategories = (state: RootState) => state.products.categories;
 export const selectFilteredProducts = (state: RootState) =>
   state.products.filteredProducts;
 export const selectProducts = (state: RootState) => state.products.products;
