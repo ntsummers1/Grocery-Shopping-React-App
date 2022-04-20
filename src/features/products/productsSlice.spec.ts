@@ -40,6 +40,7 @@ describe("Products Reducer", () => {
     products: [],
     filteredProducts: [],
     categories: [],
+    currentCategory: "All",
   };
 
   const fetchedProductsState: IProductsState = {
@@ -47,6 +48,7 @@ describe("Products Reducer", () => {
     products: [productOne, productTwo, productThree],
     filteredProducts: [productOne, productTwo, productThree],
     categories: ["All", "Snacks", "Fruits"],
+    currentCategory: "All",
   };
 
   it("should handle initial state", () => {
@@ -103,6 +105,7 @@ describe("Products Reducer", () => {
     expect(state).toEqual({
       ...fetchedProductsState,
       filteredProducts: [productOne, productTwo],
+      currentCategory: "Snacks",
     });
   });
 
@@ -115,6 +118,7 @@ describe("Products Reducer", () => {
     expect(state).toEqual({
       ...fetchedProductsState,
       filteredProducts: [],
+      currentCategory: "John",
     });
   });
 
