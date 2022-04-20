@@ -74,6 +74,7 @@ describe("Products Reducer", () => {
       products: [productOne],
       filteredProducts: [productOne],
       categories: ["Snacks", "Fruits"],
+      currentCategory: "All",
     });
   });
 
