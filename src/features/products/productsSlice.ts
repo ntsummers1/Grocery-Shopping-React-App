@@ -35,20 +35,13 @@ const productsSlice = createSlice({
   name: "Products Reducer",
   initialState,
   reducers: {
-    // filterProducts: (state, action: PayloadAction<IProductsFilter>) => {
-    //   const filters = action.payload;
-    //   state.filteredProducts = state.products;
-    //   if (filters.instock != null) {
-    //     state.filteredProducts = state.filteredProducts.filter(
-    //       (item) => item.instock === filters.instock
-    //     );
-    //   }
-    //   if (filters.name != null) {
-    //     state.filteredProducts = state.filteredProducts.filter((item) =>
-    //       item.name.includes(filters.name!)
-    //     );
-    //   }
-    // },
+    getProductsByName: (state, action: PayloadAction<string>) => {
+      const name = action.payload;
+
+      state.filteredProducts = state.products.filter((item) =>
+        item.name.toLowerCase().includes(name.toLowerCase())
+      );
+    },
     getProductsByCategory: (state, action: PayloadAction<string>) => {
       const category = action.payload;
       console.log(category);
@@ -59,7 +52,6 @@ const productsSlice = createSlice({
       } else {
         state.filteredProducts = state.products.filter((item) => item);
       }
-      console.log(state.filteredProducts);
     },
   },
   extraReducers: (builder) => {
@@ -84,7 +76,8 @@ const productsSlice = createSlice({
 });
 
 // export const { filterProducts } = productsSlice.actions;
-export const { getProductsByCategory } = productsSlice.actions;
+export const { getProductsByCategory, getProductsByName } =
+  productsSlice.actions;
 
 export const selectCategories = (state: RootState) => state.products.categories;
 export const selectFilteredProducts = (state: RootState) =>

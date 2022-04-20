@@ -5,7 +5,7 @@ const Profile = (props: { onClick: () => void }) => {
   return (
     <FaUserCircle
       onClick={props.onClick}
-      className="text-white bg-white/30 hover:bg-white/20 rounded-full text-4xl p-1.5 text-center inline-flex items-center mr-2 cursor-pointer ml-8"
+      className="text-white bg-white/30 hover:bg-white/20 rounded-full text-4xl p-1.5 text-center inline-flex items-center mr-2 cursor-pointer ml-2 sm:ml-4 lg:ml-8"
     />
   );
 };
