@@ -1,107 +1,110 @@
-[
-  {
-    "id": 1,
-    "name": "Doritos Tor. Chips Cool Ranch",
-    "price": 3.59,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/doritos-cool-ranch.png"
-  },
-  {
-    "id": 2,
-    "name": "Doritos Tor. Chips Flamin Hot",
-    "price": 3.59,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/doritos-flamin-hot.png"
-  },
-  {
-    "id": 3,
-    "name": "Doritos Tor. Chips Nacho Cheese",
-    "price": 3.59,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/doritos-nacho-cheese.png"
-  },
-  {
-    "id": 4,
-    "name": "Doritos Tor. Chips Salsa Verde",
-    "price": 3.59,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/doritos-salsa-verde.png"
-  },
-  {
-    "id": 5,
-    "name": "Herrs Crisp and Tasty Tor. Chips",
-    "price": 2.99,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/herrs-crisp-tasty.png"
-  },
-  {
-    "id": 6,
-    "name": "Herrs Red Hot Tor. Chips",
-    "price": 2.99,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/herrs-red-hot.png"
-  },
-  {
-    "id": 7,
-    "name": "Herrs Ripples Original Tor. Chips",
-    "price": 2.99,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/herrs-ripples.png"
-  },
-  {
-    "id": 8,
-    "name": "Lays Tor. Chips Cheddar Sour Cream",
-    "price": 3.39,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/lays-cheddar-sour.png"
-  },
+{
+ "categories": ["All", "Snacks", "Fruits"],  
+ "products" : [
+    {
+      "id": 1,
+      "name": "Doritos Tor. Chips Cool Ranch",
+      "price": 3.59,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/doritos-cool-ranch.png"
+    },
+    {
+      "id": 2,
+      "name": "Doritos Tor. Chips Flamin Hot",
+      "price": 3.59,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/doritos-flamin-hot.png"
+    },
+    {
+      "id": 3,
+      "name": "Doritos Tor. Chips Nacho Cheese",
+      "price": 3.59,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/doritos-nacho-cheese.png"
+    },
+    {
+      "id": 4,
+      "name": "Doritos Tor. Chips Salsa Verde",
+      "price": 3.59,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/doritos-salsa-verde.png"
+    },
+    {
+      "id": 5,
+      "name": "Herrs Crisp and Tasty Tor. Chips",
+      "price": 2.99,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/herrs-crisp-tasty.png"
+    },
+    {
+      "id": 6,
+      "name": "Herrs Red Hot Tor. Chips",
+      "price": 2.99,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/herrs-red-hot.png"
+    },
+    {
+      "id": 7,
+      "name": "Herrs Ripples Original Tor. Chips",
+      "price": 2.99,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/herrs-ripples.png"
+    },
+    {
+      "id": 8,
+      "name": "Lays Tor. Chips Cheddar Sour Cream",
+      "price": 3.39,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/lays-cheddar-sour.png"
+    },
 
-  {
-    "id": 9,
-    "name": "Lays Tor. Chips Classic",
-    "price": 3.39,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/lays-classic.png"
-  },
-  {
-    "id": 10,
-    "name": "Lays Tor. Chips Gusto Bacon",
-    "price": 3.39,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/lays-gusto-bacon.png"
-  },
-  {
-    "id": 11,
-    "name": "Lays Tor. Chips Honey BBQ",
-    "price": 3.39,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/lays-honey-barbecue.png"
-  },
-  {
-    "id": 12,
-    "name": "Lays Tor. Chips Original Wavy",
-    "price": 3.39,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/lays-original-wavy.png"
-  },
-  {
-    "id": 13,
-    "name": "Nicks Honey BBQ Tor. Chips",
-    "price": 2.99,
-    "category": ["Snacks"],
-    "instock": true,
-    "img": "imgs/nicks-honey-bbq.png"
-  }
-]
+    {
+      "id": 9,
+      "name": "Lays Tor. Chips Classic",
+      "price": 3.39,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/lays-classic.png"
+    },
+    {
+      "id": 10,
+      "name": "Lays Tor. Chips Gusto Bacon",
+      "price": 3.39,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/lays-gusto-bacon.png"
+    },
+    {
+      "id": 11,
+      "name": "Lays Tor. Chips Honey BBQ",
+      "price": 3.39,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/lays-honey-barbecue.png"
+    },
+    {
+      "id": 12,
+      "name": "Lays Tor. Chips Original Wavy",
+      "price": 3.39,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/lays-original-wavy.png"
+    },
+    {
+      "id": 13,
+      "name": "Nicks Honey BBQ Tor. Chips",
+      "price": 2.99,
+      "category": ["Snacks"],
+      "instock": true,
+      "img": "imgs/nicks-honey-bbq.png"
+    }
+  ]
+}

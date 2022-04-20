@@ -3,15 +3,18 @@ import { selectCartItemsLength } from "../cart/cartSlice";
 import Basket from "./Basket";
 import Close from "./Close";
 import HeaderTitle from "./HeaderTitle";
+import Profile from "./Profile";
 import Search from "./Search";
 
 type Props = {
   left: "basket" | "categories";
   middle: "search" | string;
-  right: "basket/profile" | "close";
+  right: "profile" | "close";
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  signOut: any;
 };
 
-const Header = ({ left, middle, right }: Props) => {
+const Header = ({ left, middle, right, signOut }: Props) => {
   const amountOfItems = useAppSelector(selectCartItemsLength);
 
   return (
@@ -20,11 +23,7 @@ const Header = ({ left, middle, right }: Props) => {
         <div className="py-4 flex flex-wrap justify-between items-center mx-auto">
           {left == "basket" ? <Basket amountOfItems={amountOfItems} /> : <></>}
           {middle == "search" ? <Search /> : <HeaderTitle title={middle} />}
-          {right == "basket/profile" ? (
-            <Basket amountOfItems={amountOfItems} />
-          ) : (
-            <Close />
-          )}
+          {right == "profile" ? <Profile onClick={signOut} /> : <Close />}
         </div>
       </nav>
     </div>

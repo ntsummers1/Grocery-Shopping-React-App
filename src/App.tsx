@@ -12,13 +12,14 @@ function App({ signOut, user }: any) {
   return (
     <div className="bg-light-background min-h-full pt-4">
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/cart" element={<CartPage />} />
+        <Route path="/" element={<HomePage signOut={signOut} />} />
+        <Route
+          path="/cart"
+          element={<CartPage signOut={signOut} user={user} />}
+        />
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<FourOhFour />} />
       </Routes>
-      <h1>Hello {user.username}</h1>
-      <button onClick={signOut}>Sign out</button>
     </div>
   );
 }

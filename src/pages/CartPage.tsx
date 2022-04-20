@@ -14,7 +14,15 @@ import {
 } from "react-icons/fa";
 import CartItem from "../features/cart/cartItem/CartItem";
 
-const CartPage = () => {
+type Props = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  signOut: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  user: any;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const CartPage = ({ user, signOut }: Props) => {
   const cartItems: ICart = useAppSelector(selectCartItems);
   const totalCost: number = useAppSelector(selectCartTotalPrice);
   const shippingFee = 3.99;
@@ -23,7 +31,7 @@ const CartPage = () => {
 
   return (
     <div>
-      <Header left="basket" middle="My Cart" right="close" />
+      <Header left="basket" middle="My Cart" right="close" signOut={signOut} />
 
       <div className="flex flex-col lg:flex-row mx-4">
         <div className="flex-auto w-full lg:w-3/5 lg:border-r-2 border-gray-100 px-2 lg:pr-12 lg:pl-4">

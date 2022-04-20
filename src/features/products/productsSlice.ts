@@ -1,19 +1,20 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../../app/store";
-// import IProductsFilter from "./productsFilterInterface";
 import IProducts from "./productsInterface";
 
 export interface IProductsState {
   status: "idle" | "loading" | "error";
   products: IProducts;
   filteredProducts: IProducts;
+  categories: string[];
 }
 
 const initialState: IProductsState = {
   status: "idle",
   products: [],
   filteredProducts: [],
+  categories: [],
 };
 
 export const fetchProducts = createAsyncThunk(
@@ -48,6 +49,18 @@ const productsSlice = createSlice({
     //     );
     //   }
     // },
+    getProductsByCategory: (state, action: PayloadAction<string>) => {
+      const category = action.payload;
+      console.log(category);
+      if (category !== "All") {
+        state.filteredProducts = state.products.filter((item) =>
+          item.category.includes(category)
+        );
+      } else {
+        state.filteredProducts = state.products.filter((item) => item);
+      }
+      console.log(state.filteredProducts);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -56,8 +69,13 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.status = "idle";
-        state.products = action.payload;
-        state.filteredProducts = action.payload;
+        const products: IProducts = action.payload.products;
+
+        console.log(action.payload);
+
+        state.products = products;
+        state.filteredProducts = products;
+        state.categories = action.payload.categories;
       })
       .addCase(fetchProducts.rejected, (state) => {
         state.status = "error";
@@ -66,7 +84,9 @@ const productsSlice = createSlice({
 });
 
 // export const { filterProducts } = productsSlice.actions;
+export const { getProductsByCategory } = productsSlice.actions;
 
+export const selectCategories = (state: RootState) => state.products.categories;
 export const selectFilteredProducts = (state: RootState) =>
   state.products.filteredProducts;
 export const selectProducts = (state: RootState) => state.products.products;
