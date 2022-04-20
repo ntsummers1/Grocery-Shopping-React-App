@@ -1,5 +1,5 @@
 {
- "categories": ["All", "Snacks", "Fruits"],  
+ "categories": ["All", "Snacks", "Fruits", "Vegetables", "Beverages", "Fish", "Meat", "Household", "Pharmacy"],  
  "products" : [
     {
       "id": 1,
@@ -18,12 +18,44 @@
       "img": "imgs/doritos-flamin-hot.png"
     },
     {
+      "id": 86,
+      "name": "Organic Lemons by the pound",
+      "price": 0.39,
+      "category": ["Fruits"],
+      "instock": true,
+      "img": "imgs/lemon.png"
+    },
+    {
+      "id": 82,
+      "name": "Organic Kiwi Fruit by the pound",
+      "price": 0.63,
+      "category": ["Fruits"],
+      "instock": true,
+      "img": "imgs/kiwi.png"
+    },
+    {
+      "id": 20,
+      "name": "Farm-Fresh Organic Broccoli by the pound",
+      "price": 0.99,
+      "category": ["Vegetable"],
+      "instock": true,
+      "img": "imgs/broccoli.png"
+    },
+    {
       "id": 3,
       "name": "Doritos Tor. Chips Nacho Cheese",
       "price": 3.59,
       "category": ["Snacks"],
       "instock": true,
       "img": "imgs/doritos-nacho-cheese.png"
+    },
+    {
+      "id": 21,
+      "name": "Organic head of Iceberg Lettuce",
+      "price": 0.79,
+      "category": ["Vegetables"],
+      "instock": true,
+      "img": "imgs/iceberg-lettuce.png"
     },
     {
       "id": 4,
@@ -34,6 +66,22 @@
       "img": "imgs/doritos-salsa-verde.png"
     },
     {
+      "id": 14,
+      "name": "Organic Blackberries by the pound",
+      "price": 2.59,
+      "category": ["Fruits"],
+      "instock": true,
+      "img": "imgs/blackberries.png"
+    },
+    {
+      "id": 15,
+      "name": "Organic Raspberries by the pound",
+      "price": 2.79,
+      "category": ["Fruits"],
+      "instock": true,
+      "img": "imgs/raspberries.png"
+    },
+    {
       "id": 5,
       "name": "Herrs Crisp and Tasty Tor. Chips",
       "price": 2.99,
@@ -42,12 +90,20 @@
       "img": "imgs/herrs-crisp-tasty.png"
     },
     {
-      "id": 6,
-      "name": "Herrs Red Hot Tor. Chips",
-      "price": 2.99,
-      "category": ["Snacks"],
+      "id": 24,
+      "name": "Organic Sweet Potatos by the pound",
+      "price": 1.09,
+      "category": ["Vegetables"],
       "instock": true,
-      "img": "imgs/herrs-red-hot.png"
+      "img": "imgs/sweet_potato.png"
+    },
+    {
+      "id": 22,
+      "name": "Farm-Fresh Pineapples by the pound",
+      "price": 0.79,
+      "category": ["Fruits"],
+      "instock": true,
+      "img": "imgs/pineapple.png"
     },
     {
       "id": 7,
@@ -58,53 +114,60 @@
       "img": "imgs/herrs-ripples.png"
     },
     {
-      "id": 8,
-      "name": "Lays Tor. Chips Cheddar Sour Cream",
-      "price": 3.39,
-      "category": ["Snacks"],
+      "id": 33,
+      "name": "Organic head of Romaine Lettuce",
+      "price": 0.79,
+      "category": ["Vegetables"],
       "instock": true,
-      "img": "imgs/lays-cheddar-sour.png"
+      "img": "imgs/romaine_lettuce.png"
     },
-
+    {
+      "id": 16,
+      "name": "Farm-Fresh Organic Apples by the pound",
+      "price": 1.86,
+      "category": ["Fruits"],
+      "instock": true,
+      "img": "imgs/apple.png"
+    },
     {
       "id": 9,
-      "name": "Lays Tor. Chips Classic",
+      "name": "Lays Tortilla Chips Classic",
       "price": 3.39,
       "category": ["Snacks"],
       "instock": true,
       "img": "imgs/lays-classic.png"
     },
     {
-      "id": 10,
-      "name": "Lays Tor. Chips Gusto Bacon",
-      "price": 3.39,
-      "category": ["Snacks"],
+      "id": 27,
+      "name": "Organic Russet Potatos by the pound",
+      "price": 1.09,
+      "category": ["Vegetables"],
       "instock": true,
-      "img": "imgs/lays-gusto-bacon.png"
+      "img": "imgs/yukon-gold-potato.png"
     },
     {
       "id": 11,
-      "name": "Lays Tor. Chips Honey BBQ",
+      "name": "Lays Tortilla Chips Honey BBQ",
       "price": 3.39,
       "category": ["Snacks"],
       "instock": true,
-      "img": "imgs/lays-honey-barbecue.png"
+      "img": "imgs/lays-honey-bbq.png"
     },
     {
       "id": 12,
-      "name": "Lays Tor. Chips Original Wavy",
-      "price": 3.39,
-      "category": ["Snacks"],
+      "name": "Organic Bananas by the pound",
+      "price": 0.49,
+      "category": ["Fruits"],
       "instock": true,
-      "img": "imgs/lays-original-wavy.png"
+      "img": "imgs/banana.png"
     },
     {
       "id": 13,
-      "name": "Nicks Honey BBQ Tor. Chips",
-      "price": 2.99,
-      "category": ["Snacks"],
+      "name": "Organic Blueberries by the pound",
+      "price": 2.39,
+      "category": ["Fruits"],
       "instock": true,
-      "img": "imgs/nicks-honey-bbq.png"
+      "img": "imgs/blueberries.png"
     }
   ]
 }

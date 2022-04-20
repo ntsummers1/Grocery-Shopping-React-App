@@ -8,6 +8,7 @@ export interface IProductsState {
   products: IProducts;
   filteredProducts: IProducts;
   categories: string[];
+  currentCategory: string;
 }
 
 const initialState: IProductsState = {
@@ -15,6 +16,7 @@ const initialState: IProductsState = {
   products: [],
   filteredProducts: [],
   categories: [],
+  currentCategory: "All",
 };
 
 export const fetchProducts = createAsyncThunk(
@@ -44,13 +46,13 @@ const productsSlice = createSlice({
     },
     getProductsByCategory: (state, action: PayloadAction<string>) => {
       const category = action.payload;
-      console.log(category);
+      state.currentCategory = category;
       if (category !== "All") {
         state.filteredProducts = state.products.filter((item) =>
           item.category.includes(category)
         );
       } else {
-        state.filteredProducts = state.products.filter((item) => item);
+        state.filteredProducts = state.products;
       }
     },
   },
@@ -79,6 +81,8 @@ const productsSlice = createSlice({
 export const { getProductsByCategory, getProductsByName } =
   productsSlice.actions;
 
+export const selectCurrentCategory = (state: RootState) =>
+  state.products.currentCategory;
 export const selectCategories = (state: RootState) => state.products.categories;
 export const selectFilteredProducts = (state: RootState) =>
   state.products.filteredProducts;

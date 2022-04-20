@@ -16,7 +16,11 @@ const CartItem = ({ item }: Props) => {
 
   return (
     <div className="flex bg-white py-4 px-4 flex-row rounded-md mt-4">
-      <img src={item.img} alt={item.name} className="w-20 h-20 mr-8" />
+      <img
+        src={item.img}
+        alt={item.name}
+        className="w-40 h-20 object-contain mx-auto flex"
+      />
       <div className="flex-auto w-full mt-4">
         <p className="text-lg text-green-700"> {item.name} </p>
         <p className="text-lg text-green-800 font-bold">${item.price}</p>
@@ -24,7 +28,7 @@ const CartItem = ({ item }: Props) => {
       <div className="flex-auto flex-col w-40">
         <p
           onClick={() => dispatch(removeCompletelyFromCart(item))}
-          className="text-red-400 font-bold text-sm text-right cursor-pointer hover:text-red-500 hover:underline"
+          className="text-red-500 font-bold text-sm text-right cursor-pointer hover:text-red-600 hover:underline"
         >
           Remove
         </p>

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import Header from "../features/header/Header";
 import Categories from "../features/products/categories/Categories";
@@ -40,6 +41,7 @@ const HomePage = ({ signOut }: Props) => {
           <Products products={selectProducts} />
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

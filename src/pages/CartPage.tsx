@@ -29,6 +29,8 @@ const CartPage = ({ user, signOut }: Props) => {
   const deliveryTotal: number =
     totalCost > 0 ? parseFloat((totalCost + shippingFee).toFixed(2)) : 0;
 
+  console.log(user);
+
   return (
     <div>
       <Header left="basket" middle="My Cart" right="close" signOut={signOut} />
@@ -57,16 +59,16 @@ const CartPage = ({ user, signOut }: Props) => {
               </button>
             </div>
             <div className="flex">
-              <div className="flex-auto w-2/3">
+              <div className="flex-auto w-1/2">
                 <p className="font-bold text-xs">Full Name</p>
                 <p className="mt-1 mb-4 text-md text-green-700">
-                  Sandun Fernando
+                  {user.username}
                 </p>
               </div>
-              <div className="flex-auto w-1/3">
-                <p className="font-bold text-xs">Phone Number</p>
-                <p className="mt-1 mb-4 text-md text-green-700">
-                  (123) 456-7890
+              <div className="flex-auto w-1/2">
+                <p className="font-bold text-xs">Email Address</p>
+                <p className="mt-1 mb-4 text-md text-green-700 truncate">
+                  {user.attributes.email}
                 </p>
               </div>
             </div>
