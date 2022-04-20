@@ -35,25 +35,11 @@ const productsSlice = createSlice({
   name: "Products Reducer",
   initialState,
   reducers: {
-    // filterProducts: (state, action: PayloadAction<IProductsFilter>) => {
-    //   const filters = action.payload;
-    //   state.filteredProducts = state.products;
-    //   if (filters.instock != null) {
-    //     state.filteredProducts = state.filteredProducts.filter(
-    //       (item) => item.instock === filters.instock
-    //     );
-    //   }
-    //   if (filters.name != null) {
-    //     state.filteredProducts = state.filteredProducts.filter((item) =>
-    //       item.name.includes(filters.name!)
-    //     );
-    //   }
-    // },
     getProductsByName: (state, action: PayloadAction<string>) => {
       const name = action.payload;
 
       state.filteredProducts = state.products.filter((item) =>
-        item.name.includes(name)
+        item.name.toLowerCase().includes(name.toLowerCase())
       );
     },
     getProductsByCategory: (state, action: PayloadAction<string>) => {
